@@ -1,9 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.esp.bookmarket.ui.LoginActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_background"
+        android:scaleType="fitXY"
+        android:alpha="0.6"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.14"
+        android:src="@color/black"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:background="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/create_new_user"
+        android:paddingHorizontal="40dp">
+
+        <EditText
+            android:id="@+id/login_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/bg_login_edt"
+            android:hint="@string/username"
+            android:textColorHint="#4c73b4"
+            android:textColor="#4c73b4"
+            android:textSize="16sp"
+            android:inputType="textPersonName|textNoSuggestions"
+            android:paddingHorizontal="10dp"/>
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/bg_login_edt"
+            android:hint="@string/password"
+            android:textColorHint="#4c73b4"
+            android:textColor="#4c73b4"
+            android:textSize="16sp"
+            android:inputType="textPassword"
+            android:paddingHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot password?"
+            android:paddingHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:textSize="13dp"
+            android:onClick="onForgotPasswordClick"
+            android:textColor="#143f86"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_login_btn"
+            android:layout_marginBottom="20dp"
+            android:text="Login"
+            android:textColor="#27487e"
+            android:onClick="onLoginClick"
+            android:textAllCaps="false"/>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/create_new_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="onRegisterClick"
+        android:textColor="#27487e"/>
+
+</RelativeLayout>
