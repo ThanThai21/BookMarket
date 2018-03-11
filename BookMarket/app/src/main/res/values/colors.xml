@@ -6,4 +6,5 @@
     <color name="white">#fff</color>
     <color name="toolbar_item">#93B6F3</color>
     <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
 </resources>
