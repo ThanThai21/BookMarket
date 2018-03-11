@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start">
 
-        <include layout="@layout/navigation_drawer_home"/>
+        <include layout="@layout/side_bar"/>
 
     </android.support.design.widget.NavigationView>
 

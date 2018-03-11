@@ -1,9 +1,11 @@
 package com.esp.bookmarket.ui;
 
+import android.content.Intent;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
@@ -24,6 +26,8 @@ public class HomeActivity extends AppCompatActivity {
     private TextView recommendSeller;
     private RecyclerView newReleaseRecyclerView;
     private RecyclerView categoryRecyclerView;
+    private LinearLayoutManager layoutManager;
+    private CategoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,10 @@ public class HomeActivity extends AppCompatActivity {
         recommendSeller = findViewById(R.id.recommended_book_seller);
         newReleaseRecyclerView = findViewById(R.id.home_new_release_recycler_view);
         categoryRecyclerView = findViewById(R.id.home_category_recycler_view);
+        layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        adapter = new CategoryAdapter(this);
+        categoryRecyclerView.setLayoutManager(layoutManager);
+        categoryRecyclerView.setAdapter(adapter);
     }
 
     public void onMenuClick(View view) {
@@ -51,6 +59,8 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onSearchClick(View view) {
         //navigate Search screen
+        Intent intent = new Intent(this, SearchActivity.class);
+        startActivity(intent);
     }
 
     public void onNotificationClick(View view) {
@@ -59,5 +69,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onRecommendedBooksClick(View view) {
         //navigate book detail
+        Intent intent = new Intent(this, BookDetailActivity.class);
+        startActivity(intent);
     }
 }
