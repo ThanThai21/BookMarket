@@ -1,6 +1,7 @@
 package com.esp.bookmarket.ui;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,9 +53,13 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
         //retrofit
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 
     public void onRegisterClick(View view) {
         //navigate register screen
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }
