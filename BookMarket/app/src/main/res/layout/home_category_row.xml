@@ -7,19 +7,18 @@
     android:paddingVertical="3dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/categoryImage"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@color/colorAccent"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/categoryTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello"
         android:textColor="@color/toolbar_item"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textSize="17sp"
         android:layout_margin="10dp"/>
 
 </LinearLayout>

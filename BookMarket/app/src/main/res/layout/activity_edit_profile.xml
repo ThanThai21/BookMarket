@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.esp.bookmarket.ui.EditProfileActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_background"
+        android:scaleType="fitXY"
+        android:alpha="0.6"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.14"
+        android:src="@color/black"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:src="@color/colorAccent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/llform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/avatar"
+        android:paddingHorizontal="40dp">
+
+        <EditText
+            android:id="@+id/ep_username"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/bg_login_edt"
+            android:hint="@string/username"
+            android:textColorHint="#4c73b4"
+            android:textColor="#4c73b4"
+            android:textSize="16sp"
+            android:inputType="textNoSuggestions"
+            android:paddingHorizontal="10dp"/>
+        <EditText
+            android:id="@+id/ep_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/bg_login_edt"
+            android:hint="@string/phone"
+            android:textColorHint="#4c73b4"
+            android:textColor="#4c73b4"
+            android:textSize="16sp"
+            android:inputType="textPhonetic"
+            android:paddingHorizontal="10dp"/>
+
+        <EditText
+            android:id="@+id/ep_address"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/bg_login_edt"
+            android:hint="@string/address"
+            android:textColorHint="#4c73b4"
+            android:textColor="#4c73b4"
+            android:textSize="16sp"
+            android:inputType="textNoSuggestions"
+            android:paddingHorizontal="10dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_login_btn"
+            android:layout_marginBottom="20dp"
+            android:text="Submit"
+            android:onClick="submit"
+            android:textColor="#27487e"
+            android:textAllCaps="false"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

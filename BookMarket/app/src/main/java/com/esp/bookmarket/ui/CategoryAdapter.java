@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.esp.bookmarket.R;
+import com.esp.bookmarket.listeners.OnItemClickListener;
+import com.esp.bookmarket.model.Category;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,11 +19,16 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
     private Context context;
-    private List<String> list;
+    private List<Category> categories;
+    private OnItemClickListener onItemClickListener;
 
-    public CategoryAdapter(Context context) {
+    public CategoryAdapter(Context context, List<Category> categories) {
         this.context = context;
-        list = Arrays.asList(new String[]{"1", "2", "3", "4", "5", "6", "7", "8"});
+        this.categories = categories;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -31,24 +39,30 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
-        String str = list.get(position);
-        holder.textView.setText(str);
+        Category category = categories.get(position);
+        holder.categoryTitle.setText(category.title);
+        if (category.image != null) {
+            Glide.with(context).load(category.image).into(holder.categoryImage);
+        }
+        if (onItemClickListener != null) {
+            holder.itemView.setOnClickListener(l -> onItemClickListener.onItemClick(position));
+        }
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return categories.size();
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textView;
-        private ImageView imageView;
+        private TextView categoryTitle;
+        private ImageView categoryImage;
 
         public CategoryViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.textView);
-            imageView = itemView.findViewById(R.id.imageView);
+            categoryTitle = itemView.findViewById(R.id.categoryTitle);
+            categoryImage = itemView.findViewById(R.id.categoryImage);
         }
 
 

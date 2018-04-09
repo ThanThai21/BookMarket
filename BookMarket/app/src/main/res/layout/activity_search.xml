@@ -1,17 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f4f3f3"
+    android:orientation="vertical"
     tools:context="com.esp.bookmarket.ui.SearchActivity">
 
-    <ListView
-        android:id="@+id/listview"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/home_category_row"
-        android:divider="#000"
-        android:dividerHeight="2dp"/>
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbar_item"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Search"
+        app:titleTextColor="@color/white" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/search_titleEdt"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="2.5"
+            android:paddingHorizontal="10dp"
+            android:hint="Title"
+            android:maxLines="1"
+            android:textSize="15sp"
+            android:inputType="text|textNoSuggestions"
+            android:gravity="center_vertical|end"
+            android:background="@drawable/bg_search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Author"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/search_author"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="2.5"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:paddingEnd="15dp"
+            android:paddingStart="5dp"
+            android:inputType="text|textNoSuggestions"
+            android:background="@drawable/bg_search"
+            android:hint="Author"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        android:background="@color/white"
+        android:paddingVertical="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Publisher: "
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/search_publisher"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="2.5"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:paddingEnd="15dp"
+            android:inputType="text|textNoSuggestions"
+            android:paddingStart="5dp"
+            android:background="@drawable/bg_search"
+            android:hint="Publisher"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Category: "
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:entries="@array/country_arrays"
+            android:gravity="center_vertical|end"
+            android:maxLines="1"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="Kiếm hiệp"
+            style="@style/SpinnerwithNoArrow"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Quanlity: "
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:entries="@array/quanlity"
+            android:gravity="end"
+            android:maxLines="1"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="Kiếm hiệp"
+            style="@style/SpinnerwithNoArrow"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg_search_button"
+        android:text="Search"
+        android:onClick="search"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+</LinearLayout>

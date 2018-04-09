@@ -36,4 +36,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.makeramen:roundedimageview:2.3.0'
     compile 'com.narayanacharya:WaveView:0.9.2'
+    implementation 'com.github.bumptech.glide:glide:4.1.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
 }

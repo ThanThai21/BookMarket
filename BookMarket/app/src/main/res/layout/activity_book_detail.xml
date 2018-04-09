@@ -20,6 +20,7 @@
             app:collapsedTitleTextAppearance="@color/transparent">
 
             <ImageView
+                android:id="@+id/book_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/login_background"
@@ -27,30 +28,16 @@
                 app:layout_collapseMode="parallax"/>
 
             <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
                 android:background="#aa93B6F3"
                 app:layout_collapseMode="pin"
+                app:title="Detail"
+                app:titleTextColor="@color/white"
+                app:titleMargin="0dp"
+                app:navigationIcon="@drawable/ic_arrow_back"
                 app:contentInsetStart="0dp">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:padding="3dp"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/ic_arrow_back"
-                    android:tint="@color/white"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book name"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:paddingHorizontal="10dp"/>
 
                 <ImageView
                     android:layout_width="30dp"
@@ -70,13 +57,9 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:background="@color/colorAccent">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/username"/>
+       <include layout="@layout/book_detail_content"/>
 
     </android.support.v4.widget.NestedScrollView>
 

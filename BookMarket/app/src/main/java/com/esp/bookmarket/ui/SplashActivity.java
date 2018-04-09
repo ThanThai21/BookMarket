@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         mAuth = Auth.getInstance(this);
-        boolean isValidUser = AppUtils.checkValidString(mAuth.getUsername()) && AppUtils.checkValidString(mAuth.getAccessToken());
+        boolean isValidUser = AppUtils.checkValidString(mAuth.getUserId()) && AppUtils.checkValidString(mAuth.getAccessToken());
         if (isValidUser) {
             //go to home screen
             Intent intent = new Intent(this, HomeActivity.class);

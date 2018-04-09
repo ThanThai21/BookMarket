@@ -4,4 +4,25 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="templete">Templete</string>
+
+    <string-array name="country_arrays">
+        <item>All</item>
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+
+    <string-array name="quanlity">
+        <item>All</item>
+        <item>New</item>
+        <item>Old</item>
+    </string-array>
 </resources>

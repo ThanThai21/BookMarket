@@ -7,4 +7,8 @@
     <color name="toolbar_item">#93B6F3</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="main">#93B6F3</color>
+    <color name="enable">#aaaaaa</color>
+    <color name="disable">#efeded</color>
 </resources>
